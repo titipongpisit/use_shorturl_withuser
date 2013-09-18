@@ -1,0 +1,18 @@
+<h1>Welcome back</h1>
+<p>Enter a URL to shorten below:</p>
+
+<form action="/profilehey" method="POST">
+  <input type="text" placeholder="Enter Your URL" name="url">
+  <input type="submit" value="SHORTEN!">
+</form>
+
+<p> Here are your url </p>
+<% user = User.find(session[:user]) %>
+<ul>
+<% user.urls.each do |short_url| %>
+  <li><%= short_url.short_url %></li>
+<% end %>
+</ul>
+
+
+<a href="/sign_out"> sign out </a> 
